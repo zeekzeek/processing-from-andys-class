@@ -1,0 +1,22 @@
+import oscP5.*;
+import netP5.*;
+
+OscP5 osc;
+NetAddress remote;
+
+void setup () {
+ osc = new OscP5 (this, 12000);
+ remote = new NetAddress ("172.16.16.34", 12000);
+}
+
+void draw () {
+  
+}
+
+void oscEvent (OscMessage m) {
+ println(m.getAddress(), "mario", m.get(0)); 
+}
+
+void mousePressed() {
+ osc.send(remote,"/change", random(30, 100), random(30,170)); 
+}
