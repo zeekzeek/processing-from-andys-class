@@ -5,9 +5,10 @@ float speed = 1;
 float col = random(255);
 float dist = random(-100, 100);
 int counter = 0;
+float backgroundCol = 200;
 
 void setup() {
-  background(0);
+  background(backgroundCol);
   size (500, 500); 
   line = new ArrayList();
   for (int i=0; i<10; i++) {
@@ -55,7 +56,7 @@ class Line {
     }
     if (counter > 240) {
       counter = 200;
-      background(0);
+      background(backgroundCol);
       // now send a sound event to sc or ableton
     }
   }
@@ -68,4 +69,3 @@ class Line {
      println(y, x, counter);
   }
 }
-
